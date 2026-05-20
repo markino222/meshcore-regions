@@ -56,12 +56,15 @@ The catalog refreshes every night from the public MeshCore map at http://map.kie
 
 <!-- regions:auto-status:begin -->
 
-- Last sync: `2026-05-20T16:01:05Z`
+- Last sync: `2026-05-20T16:46:20Z`
 - Roots: 251
 - Total nodes: 565
 - Unsorted entries: 195
 
-_No activity recorded yet._
+| when (UTC) | kind | path | note |
+|---|---|---|---|
+| 2026-05-20T18:21:52Z | sync | f2f6de3 | sync: switch to PR-mode with auto-merge |
+| 2026-05-20T18:14:21Z | manual | e9133ec | initial: regions catalog, sync, validation |
 
 <!-- regions:auto-status:end -->
 

@@ -42,7 +42,7 @@ Rules enforced automatically by CI:
 - **No deletions** in `regions/`. Once a region is in the tree, it stays.
 - **Moves require approval.** If your PR moves a node from one parent to another, a maintainer adds the `approved-move` label before merge.
 - **Subdivision additions and name edits are free.** Add subdivisions under existing parents, fix a display name — no label needed.
-- Codes are lowercase ASCII letters, digits, and hyphens. Total length capped at 64 characters. A region's `code` is immutable — once published, it does not change, even if the node is re-nested under a different parent.
+- Codes are lowercase ASCII letters, digits, and hyphens. Each hyphen-separated segment is capped at 29 characters to match the MeshCore firmware region-name buffer (`char name[31]` in `RegionMap.h`, minus one byte reserved for the implicit `#` prefix the firmware prepends when deriving auto-hashtag transport keys; see meshcore-dev/MeshCore#2434). A region's `code` is immutable — once published, it does not change, even if the node is re-nested under a different parent.
 - Children of any node are sorted by `code`.
 
 ## How sync works

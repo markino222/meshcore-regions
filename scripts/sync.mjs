@@ -12,8 +12,9 @@ const INDEX_PATH = join(ROOT, 'index.json');
 const README_PATH = join(ROOT, 'README.md');
 const NOW_ISO = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 const BUCKET_KEYS = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','_'];
-const NAME_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const MAX_PATH_LEN = 64;
+// See scripts/validate.mjs for rationale (firmware buffer minus '#' prefix).
+const MAX_SEGMENT_LEN = 29;
+const NAME_RE = new RegExp(`^[a-z0-9]{1,${MAX_SEGMENT_LEN}}(-[a-z0-9]{1,${MAX_SEGMENT_LEN}})*$`);
 
 function fatal(msg) {
   console.error(`FATAL: ${msg}`);
@@ -66,8 +67,6 @@ function findOrPlace(rootMap, segments) {
   const finalPath = `${traversedPath}-${final}`;
   if (!Array.isArray(node.regions)) node.regions = [];
   if (node.regions.find((c) => c.code === finalPath)) return { kind: 'noop' };
-
-  if (finalPath.length > MAX_PATH_LEN) return { kind: 'todo', reason: `missing_parent:${traversedPath}` };
 
   node.regions.push({ code: finalPath, name: final, regions: [] });
   node.regions.sort((a, b) => a.code.localeCompare(b.code));

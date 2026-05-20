@@ -10,10 +10,13 @@ const REGIONS_DIR = join(ROOT, 'regions');
 const TODO_PATH = join(ROOT, 'unsorted', 'todo.json');
 const INDEX_PATH = join(ROOT, 'index.json');
 const BUCKET_KEYS = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','_'];
-const ROOT_CODE_RE = /^[a-z0-9]+$/;
-const CODE_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const LEAF_RE = /^[a-z0-9]+$/;
-const MAX_PATH_LEN = 64;
+// MAX_SEGMENT_LEN mirrors firmware RegionEntry name buffer (char name[31])
+// minus one byte reserved for the implicit '#' prefix that MeshCore prepends
+// when deriving auto-hashtag transport keys (see RegionMap.cpp). Issue
+// meshcore-dev/MeshCore#2434 tracks the ambiguity; 29 is the safe lower bound.
+const MAX_SEGMENT_LEN = 29;
+const ROOT_CODE_RE = new RegExp(`^[a-z0-9]{1,${MAX_SEGMENT_LEN}}$`);
+const CODE_RE = new RegExp(`^[a-z0-9]{1,${MAX_SEGMENT_LEN}}(-[a-z0-9]{1,${MAX_SEGMENT_LEN}})*$`);
 
 const errors = [];
 function err(msg) { errors.push(msg); }
@@ -34,9 +37,6 @@ function checkNode(node, parentCode, file) {
   }
   if (typeof node.name !== 'string' || node.name.length === 0) {
     err(`${file}: missing/empty name at "${node.code}"`);
-  }
-  if (node.code.length > MAX_PATH_LEN) {
-    err(`${file}: code "${node.code}" exceeds ${MAX_PATH_LEN} chars`);
   }
   const allowed = new Set(['code', 'name', 'regions']);
   for (const k of Object.keys(node)) {

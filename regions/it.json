@@ -3,80 +3,80 @@
   "name": "Italy",
   "regions": [
     {
-      "code": "emr",
+      "code": "it-emr",
       "name": "emr",
       "regions": [
         {
-          "code": "pr",
+          "code": "it-emr-pr",
           "name": "pr",
           "regions": []
         }
       ]
     },
     {
-      "code": "li",
+      "code": "it-li",
       "name": "li",
       "regions": []
     },
     {
-      "code": "lig",
+      "code": "it-lig",
       "name": "lig",
       "regions": [
         {
-          "code": "sp",
+          "code": "it-lig-sp",
           "name": "sp",
           "regions": []
         },
         {
-          "code": "vz",
+          "code": "it-lig-vz",
           "name": "vz",
           "regions": []
         }
       ]
     },
     {
-      "code": "lom",
+      "code": "it-lom",
       "name": "lom",
       "regions": []
     },
     {
-      "code": "pi",
+      "code": "it-pi",
       "name": "pi",
       "regions": [
         {
-          "code": "os",
+          "code": "it-pi-os",
           "name": "os",
           "regions": []
         },
         {
-          "code": "to",
+          "code": "it-pi-to",
           "name": "to",
           "regions": []
         }
       ]
     },
     {
-      "code": "pie",
+      "code": "it-pie",
       "name": "pie",
       "regions": [
         {
-          "code": "os",
+          "code": "it-pie-os",
           "name": "os",
           "regions": []
         },
         {
-          "code": "to",
+          "code": "it-pie-to",
           "name": "to",
           "regions": []
         }
       ]
     },
     {
-      "code": "tos",
+      "code": "it-tos",
       "name": "tos",
       "regions": [
         {
-          "code": "ms",
+          "code": "it-tos-ms",
           "name": "ms",
           "regions": []
         }

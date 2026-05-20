@@ -3,68 +3,68 @@
   "name": "Austria",
   "regions": [
     {
-      "code": "bgld",
+      "code": "at-bgld",
       "name": "bgld",
       "regions": []
     },
     {
-      "code": "de",
+      "code": "at-de",
       "name": "de",
       "regions": []
     },
     {
-      "code": "noe",
+      "code": "at-noe",
       "name": "noe",
       "regions": []
     },
     {
-      "code": "ooe",
+      "code": "at-ooe",
       "name": "ooe",
       "regions": [
         {
-          "code": "fr",
+          "code": "at-ooe-fr",
           "name": "fr",
           "regions": []
         }
       ]
     },
     {
-      "code": "ost",
+      "code": "at-ost",
       "name": "ost",
       "regions": []
     },
     {
-      "code": "sbg",
+      "code": "at-sbg",
       "name": "sbg",
       "regions": []
     },
     {
-      "code": "stmk",
+      "code": "at-stmk",
       "name": "stmk",
       "regions": []
     },
     {
-      "code": "sued",
+      "code": "at-sued",
       "name": "sued",
       "regions": []
     },
     {
-      "code": "t",
+      "code": "at-t",
       "name": "t",
       "regions": []
     },
     {
-      "code": "vlbg",
+      "code": "at-vlbg",
       "name": "vlbg",
       "regions": []
     },
     {
-      "code": "w",
+      "code": "at-w",
       "name": "w",
       "regions": []
     },
     {
-      "code": "west",
+      "code": "at-west",
       "name": "west",
       "regions": []
     }

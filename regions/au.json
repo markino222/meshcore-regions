@@ -3,31 +3,31 @@
   "name": "Australia",
   "regions": [
     {
-      "code": "act",
+      "code": "au-act",
       "name": "act",
       "regions": []
     },
     {
-      "code": "nsw",
+      "code": "au-nsw",
       "name": "nsw",
       "regions": []
     },
     {
-      "code": "qld",
+      "code": "au-qld",
       "name": "qld",
       "regions": []
     },
     {
-      "code": "wa",
+      "code": "au-wa",
       "name": "wa",
       "regions": [
         {
-          "code": "buy",
+          "code": "au-wa-buy",
           "name": "buy",
           "regions": []
         },
         {
-          "code": "per",
+          "code": "au-wa-per",
           "name": "per",
           "regions": []
         }

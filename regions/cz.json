@@ -3,17 +3,17 @@
   "name": "Czechia",
   "regions": [
     {
-      "code": "jmk",
+      "code": "cz-jmk",
       "name": "jmk",
       "regions": []
     },
     {
-      "code": "pha",
+      "code": "cz-pha",
       "name": "pha",
       "regions": []
     },
     {
-      "code": "stc",
+      "code": "cz-stc",
       "name": "stc",
       "regions": []
     }

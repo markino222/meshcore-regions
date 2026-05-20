@@ -3,17 +3,17 @@
   "name": "St. Helena",
   "regions": [
     {
-      "code": "kel",
+      "code": "sh-kel",
       "name": "kel",
       "regions": []
     },
     {
-      "code": "ki",
+      "code": "sh-ki",
       "name": "ki",
       "regions": []
     },
     {
-      "code": "kiel",
+      "code": "sh-kiel",
       "name": "kiel",
       "regions": []
     }

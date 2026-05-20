@@ -3,7 +3,7 @@
   "name": "Island of Ireland",
   "regions": [
     {
-      "code": "admin",
+      "code": "ioi-admin",
       "name": "admin",
       "regions": []
     }

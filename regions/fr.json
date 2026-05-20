@@ -3,32 +3,32 @@
   "name": "France",
   "regions": [
     {
-      "code": "01",
+      "code": "fr-01",
       "name": "01",
       "regions": []
     },
     {
-      "code": "25",
+      "code": "fr-25",
       "name": "25",
       "regions": []
     },
     {
-      "code": "69",
+      "code": "fr-69",
       "name": "69",
       "regions": []
     },
     {
-      "code": "74",
+      "code": "fr-74",
       "name": "74",
       "regions": []
     },
     {
-      "code": "ara",
+      "code": "fr-ara",
       "name": "ara",
       "regions": []
     },
     {
-      "code": "bfc",
+      "code": "fr-bfc",
       "name": "bfc",
       "regions": []
     }

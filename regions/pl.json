@@ -3,32 +3,32 @@
   "name": "Poland",
   "regions": [
     {
-      "code": "kra",
+      "code": "pl-kra",
       "name": "kra",
       "regions": []
     },
     {
-      "code": "krk",
+      "code": "pl-krk",
       "name": "krk",
       "regions": []
     },
     {
-      "code": "ld",
+      "code": "pl-ld",
       "name": "ld",
       "regions": []
     },
     {
-      "code": "ma",
+      "code": "pl-ma",
       "name": "ma",
       "regions": []
     },
     {
-      "code": "mz",
+      "code": "pl-mz",
       "name": "mz",
       "regions": []
     },
     {
-      "code": "wp",
+      "code": "pl-wp",
       "name": "wp",
       "regions": []
     }

@@ -36,20 +36,17 @@ function normalize(node) {
   return out;
 }
 
-function* walk(node, ancestors) {
-  const path = [...ancestors, node.code].join('-');
-  yield { path, name: node.name };
+function* walk(node) {
+  yield { path: node.code, name: node.name };
   if (Array.isArray(node.regions)) {
-    for (const child of node.regions) {
-      yield* walk(child, [...ancestors, node.code]);
-    }
+    for (const child of node.regions) yield* walk(child);
   }
 }
 
 export function buildFlat(tree) {
   const flat = [];
   for (const root of tree) {
-    for (const entry of walk(root, [])) flat.push(entry);
+    for (const entry of walk(root)) flat.push(entry);
   }
   flat.sort((a, b) => a.path.localeCompare(b.path));
   return flat;

@@ -3,206 +3,206 @@
   "name": "Netherlands",
   "regions": [
     {
-      "code": "ame",
+      "code": "nl-ame",
       "name": "ame",
       "regions": []
     },
     {
-      "code": "ams",
+      "code": "nl-ams",
       "name": "ams",
       "regions": []
     },
     {
-      "code": "cpi",
+      "code": "nl-cpi",
       "name": "cpi",
       "regions": []
     },
     {
-      "code": "dor",
+      "code": "nl-dor",
       "name": "dor",
       "regions": []
     },
     {
-      "code": "dr",
+      "code": "nl-dr",
       "name": "dr",
       "regions": []
     },
     {
-      "code": "ede",
+      "code": "nl-ede",
       "name": "ede",
       "regions": []
     },
     {
-      "code": "fl",
+      "code": "nl-fl",
       "name": "fl",
       "regions": []
     },
     {
-      "code": "fr",
+      "code": "nl-fr",
       "name": "fr",
       "regions": []
     },
     {
-      "code": "ge",
+      "code": "nl-ge",
       "name": "ge",
       "regions": [
         {
-          "code": "ede",
+          "code": "nl-ge-ede",
           "name": "ede",
           "regions": []
         },
         {
-          "code": "hrd",
+          "code": "nl-ge-hrd",
           "name": "hrd",
           "regions": []
         },
         {
-          "code": "ltn",
+          "code": "nl-ge-ltn",
           "name": "ltn",
           "regions": []
         }
       ]
     },
     {
-      "code": "gr",
+      "code": "nl-gr",
       "name": "gr",
       "regions": [
         {
-          "code": "les",
+          "code": "nl-gr-les",
           "name": "les",
           "regions": []
         }
       ]
     },
     {
-      "code": "grq",
+      "code": "nl-grq",
       "name": "grq",
       "regions": []
     },
     {
-      "code": "haa",
+      "code": "nl-haa",
       "name": "haa",
       "regions": []
     },
     {
-      "code": "hag",
+      "code": "nl-hag",
       "name": "hag",
       "regions": []
     },
     {
-      "code": "hrd",
+      "code": "nl-hrd",
       "name": "hrd",
       "regions": []
     },
     {
-      "code": "hrv",
+      "code": "nl-hrv",
       "name": "hrv",
       "regions": []
     },
     {
-      "code": "ley",
+      "code": "nl-ley",
       "name": "ley",
       "regions": []
     },
     {
-      "code": "lid",
+      "code": "nl-lid",
       "name": "lid",
       "regions": []
     },
     {
-      "code": "nb",
+      "code": "nl-nb",
       "name": "nb",
       "regions": []
     },
     {
-      "code": "nh",
+      "code": "nl-nh",
       "name": "nh",
       "regions": [
         {
-          "code": "asd",
+          "code": "nl-nh-asd",
           "name": "asd",
           "regions": []
         }
       ]
     },
     {
-      "code": "noord",
+      "code": "nl-noord",
       "name": "noord",
       "regions": []
     },
     {
-      "code": "ov",
+      "code": "nl-ov",
       "name": "ov",
       "regions": [
         {
-          "code": "sew",
+          "code": "nl-ov-sew",
           "name": "sew",
           "regions": []
         },
         {
-          "code": "stw",
+          "code": "nl-ov-stw",
           "name": "stw",
           "regions": []
         }
       ]
     },
     {
-      "code": "rhe",
+      "code": "nl-rhe",
       "name": "rhe",
       "regions": []
     },
     {
-      "code": "ut",
+      "code": "nl-ut",
       "name": "ut",
       "regions": [
         {
-          "code": "doo",
+          "code": "nl-ut-doo",
           "name": "doo",
           "regions": []
         },
         {
-          "code": "drb",
+          "code": "nl-ut-drb",
           "name": "drb",
           "regions": []
         }
       ]
     },
     {
-      "code": "utc",
+      "code": "nl-utc",
       "name": "utc",
       "regions": []
     },
     {
-      "code": "varu",
+      "code": "nl-varu",
       "name": "varu",
       "regions": []
     },
     {
-      "code": "vee",
+      "code": "nl-vee",
       "name": "vee",
       "regions": []
     },
     {
-      "code": "wgw",
+      "code": "nl-wgw",
       "name": "wgw",
       "regions": []
     },
     {
-      "code": "ze",
+      "code": "nl-ze",
       "name": "ze",
       "regions": []
     },
     {
-      "code": "zh",
+      "code": "nl-zh",
       "name": "zh",
       "regions": [
         {
-          "code": "dor",
+          "code": "nl-zh-dor",
           "name": "dor",
           "regions": []
         },
         {
-          "code": "wss",
+          "code": "nl-zh-wss",
           "name": "wss",
           "regions": []
         }

@@ -10,36 +10,51 @@ const REGIONS_DIR = join(ROOT, 'regions');
 const TODO_PATH = join(ROOT, 'unsorted', 'todo.json');
 const INDEX_PATH = join(ROOT, 'index.json');
 const BUCKET_KEYS = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','_'];
-const CODE_RE = /^[a-z0-9]+$/;
-const PATH_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const ROOT_CODE_RE = /^[a-z0-9]+$/;
+const CODE_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const LEAF_RE = /^[a-z0-9]+$/;
 const MAX_PATH_LEN = 64;
 
 const errors = [];
 function err(msg) { errors.push(msg); }
 
-function checkNode(node, ancestors, file) {
+function checkNode(node, parentCode, file) {
   if (!node || typeof node !== 'object') {
-    err(`${file}: node at ${ancestors.join('-') || '<root>'} is not an object`);
+    err(`${file}: node under "${parentCode || '<root>'}" is not an object`);
     return;
   }
   if (typeof node.code !== 'string' || !CODE_RE.test(node.code)) {
-    err(`${file}: invalid code "${node.code}" at ${ancestors.join('-') || '<root>'}`);
+    err(`${file}: invalid code "${node.code}" under "${parentCode || '<root>'}"`);
     return;
   }
-  if (typeof node.name !== 'string' || node.name.length === 0) {
-    err(`${file}: missing/empty name at ${[...ancestors, node.code].join('-')}`);
+  if (parentCode === null) {
+    if (!ROOT_CODE_RE.test(node.code)) {
+      err(`${file}: root code "${node.code}" must be a single segment (no hyphens)`);
+    }
+  } else {
+    const expectedPrefix = `${parentCode}-`;
+    if (!node.code.startsWith(expectedPrefix)) {
+      err(`${file}: child code "${node.code}" must start with "${expectedPrefix}"`);
+    } else {
+      const leaf = node.code.slice(expectedPrefix.length);
+      if (!LEAF_RE.test(leaf)) {
+        err(`${file}: child code "${node.code}" final segment "${leaf}" must match [a-z0-9]+`);
+      }
+    }
   }
-  const joined = [...ancestors, node.code].join('-');
-  if (joined.length > MAX_PATH_LEN) {
-    err(`${file}: joined path "${joined}" exceeds ${MAX_PATH_LEN} chars`);
+  if (typeof node.name !== 'string' || node.name.length === 0) {
+    err(`${file}: missing/empty name at "${node.code}"`);
+  }
+  if (node.code.length > MAX_PATH_LEN) {
+    err(`${file}: code "${node.code}" exceeds ${MAX_PATH_LEN} chars`);
   }
   const allowed = new Set(['code', 'name', 'regions']);
   for (const k of Object.keys(node)) {
-    if (!allowed.has(k)) err(`${file}: unexpected key "${k}" at ${joined}`);
+    if (!allowed.has(k)) err(`${file}: unexpected key "${k}" at "${node.code}"`);
   }
   if ('regions' in node) {
     if (!Array.isArray(node.regions)) {
-      err(`${file}: regions must be array at ${joined}`);
+      err(`${file}: regions must be array at "${node.code}"`);
       return;
     }
     const codes = node.regions.map((c) => c?.code);
@@ -49,16 +64,16 @@ function checkNode(node, ancestors, file) {
       if (dupSet.has(c)) dups.add(c);
       dupSet.add(c);
     }
-    for (const d of dups) err(`${file}: duplicate child code "${d}" under ${joined}`);
+    for (const d of dups) err(`${file}: duplicate child code "${d}" under "${node.code}"`);
     const sorted = [...codes].sort((a, b) => a.localeCompare(b));
     for (let i = 0; i < codes.length; i++) {
       if (codes[i] !== sorted[i]) {
-        err(`${file}: children under ${joined} not sorted (expected ${sorted.join(',')}, got ${codes.join(',')})`);
+        err(`${file}: children under "${node.code}" not sorted`);
         break;
       }
     }
     for (const child of node.regions) {
-      checkNode(child, [...ancestors, node.code], file);
+      checkNode(child, node.code, file);
     }
   }
 }
@@ -71,7 +86,7 @@ function checkRegions() {
   const files = readdirSync(REGIONS_DIR).filter((f) => f.endsWith('.json'));
   for (const file of files) {
     const stem = basename(file, '.json');
-    if (!CODE_RE.test(stem)) {
+    if (!ROOT_CODE_RE.test(stem)) {
       err(`regions/${file}: filename stem "${stem}" not [a-z0-9]+`);
       continue;
     }
@@ -85,7 +100,7 @@ function checkRegions() {
     if (node.code !== stem) {
       err(`regions/${file}: code "${node.code}" does not match filename stem "${stem}"`);
     }
-    checkNode(node, [], `regions/${file}`);
+    checkNode(node, null, `regions/${file}`);
   }
 }
 
@@ -164,12 +179,11 @@ function checkPrScope() {
 
 function pathsFromTree(tree) {
   const out = new Map();
-  function walk(node, ancestors) {
-    const p = [...ancestors, node.code].join('-');
-    out.set(p, node.name);
-    if (Array.isArray(node.regions)) for (const c of node.regions) walk(c, [...ancestors, node.code]);
+  function walk(node) {
+    out.set(node.code, node.name);
+    if (Array.isArray(node.regions)) for (const c of node.regions) walk(c);
   }
-  for (const r of tree) walk(r, []);
+  for (const r of tree) walk(r);
   return out;
 }
 

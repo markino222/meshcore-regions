@@ -3,7 +3,7 @@
   "name": "United Kingdom",
   "regions": [
     {
-      "code": "est",
+      "code": "gb-est",
       "name": "est",
       "regions": []
     }

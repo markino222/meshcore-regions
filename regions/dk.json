@@ -3,7 +3,7 @@
   "name": "Denmark",
   "regions": [
     {
-      "code": "sdk",
+      "code": "dk-sdk",
       "name": "sdk",
       "regions": []
     }

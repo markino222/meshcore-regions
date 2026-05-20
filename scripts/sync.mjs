@@ -47,40 +47,40 @@ function findOrPlace(rootMap, segments) {
   if (rest.length === 0) return { kind: 'noop' };
 
   let node = rootNode;
-  const traversed = [root];
+  let traversedPath = root;
   for (let i = 0; i < rest.length - 1; i++) {
     const seg = rest[i];
+    const childPath = `${traversedPath}-${seg}`;
     if (!Array.isArray(node.regions)) {
-      return { kind: 'todo', reason: `missing_parent:${[...traversed, seg].join('-')}` };
+      return { kind: 'todo', reason: `missing_parent:${childPath}` };
     }
-    const child = node.regions.find((c) => c.code === seg);
+    const child = node.regions.find((c) => c.code === childPath);
     if (!child) {
-      return { kind: 'todo', reason: `missing_parent:${[...traversed, seg].join('-')}` };
+      return { kind: 'todo', reason: `missing_parent:${childPath}` };
     }
     node = child;
-    traversed.push(seg);
+    traversedPath = childPath;
   }
 
   const final = rest[rest.length - 1];
+  const finalPath = `${traversedPath}-${final}`;
   if (!Array.isArray(node.regions)) node.regions = [];
-  if (node.regions.find((c) => c.code === final)) return { kind: 'noop' };
+  if (node.regions.find((c) => c.code === finalPath)) return { kind: 'noop' };
 
-  const newPath = [...traversed, final].join('-');
-  if (newPath.length > MAX_PATH_LEN) return { kind: 'todo', reason: `missing_parent:${traversed.join('-')}` };
+  if (finalPath.length > MAX_PATH_LEN) return { kind: 'todo', reason: `missing_parent:${traversedPath}` };
 
-  node.regions.push({ code: final, name: final, regions: [] });
+  node.regions.push({ code: finalPath, name: final, regions: [] });
   node.regions.sort((a, b) => a.code.localeCompare(b.code));
-  return { kind: 'add', addPath: newPath, addParent: traversed.join('-') };
+  return { kind: 'add', addPath: finalPath, addParent: traversedPath };
 }
 
 function pathsInTree(tree) {
   const set = new Set();
-  function walk(node, ancestors) {
-    const p = [...ancestors, node.code].join('-');
-    set.add(p);
-    if (Array.isArray(node.regions)) for (const c of node.regions) walk(c, [...ancestors, node.code]);
+  function walk(node) {
+    set.add(node.code);
+    if (Array.isArray(node.regions)) for (const c of node.regions) walk(c);
   }
-  for (const r of tree) walk(r, []);
+  for (const r of tree) walk(r);
   return set;
 }
 

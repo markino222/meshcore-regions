@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: sync
@@ -30,8 +31,8 @@ jobs:
 
       - name: Configure git
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Run sync
         id: run
@@ -41,22 +42,35 @@ jobs:
           set -o pipefail
           node scripts/sync.mjs | tee sync.log
           summary="$(grep '^SUMMARY ' sync.log | tail -n1 | sed 's/^SUMMARY //')"
+          added="$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.added))})')"
+          resolved="$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.resolved))})')"
+          unsorted="$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.unsorted_total))})')"
           {
-            echo "summary=$summary"
-            echo "added=$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.added))})')"
-            echo "resolved=$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.resolved))})')"
-            echo "unsorted=$(echo "$summary" | node -e 'let s=""; process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.unsorted_total))})')"
+            echo "added=$added"
+            echo "resolved=$resolved"
+            echo "unsorted=$unsorted"
           } >> "$GITHUB_OUTPUT"
           rm -f sync.log
 
-      - name: Commit and push if changed
+      - name: Open or update sync PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -z "$(git status --porcelain)" ]; then
-            echo "committed: none (no diff)"
+            echo "no diff, skipping PR"
             exit 0
           fi
+          branch="sync/auto"
+          git checkout -B "$branch"
           git add -A regions/ unsorted/ index.json README.md
           msg="sync: ${{ steps.run.outputs.added }} added, ${{ steps.run.outputs.resolved }} resolved, ${{ steps.run.outputs.unsorted }} unsorted"
           git commit -m "$msg"
-          git push origin main:main
-          echo "committed: $(git rev-parse HEAD)"
+          git push --force-with-lease origin "$branch"
+          existing="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number' || true)"
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --title "$msg" --body "Automated sync from upstream."
+            pr_number="$existing"
+          else
+            pr_number="$(gh pr create --base main --head "$branch" --title "$msg" --body "Automated sync from upstream." | sed -n 's#.*/pull/\([0-9]*\).*#\1#p')"
+          fi
+          gh pr merge "$pr_number" --merge --delete-branch --auto

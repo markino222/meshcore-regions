@@ -142,6 +142,8 @@ function checkIndexFreshness() {
 function checkPrScope() {
   const list = process.env.GH_CHANGED_FILES;
   if (!list) return;
+  // Sync bot opens PRs that legitimately touch index.json + README.md.
+  if (process.env.GH_PR_AUTHOR === 'github-actions[bot]') return;
   const files = list.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
   const allow = /^(regions\/[a-z0-9]+\.json|unsorted\/todo\.json)$/;
   const baseRef = process.env.GH_BASE_REF;

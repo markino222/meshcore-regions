@@ -3,6 +3,17 @@
   "name": "Denmark",
   "regions": [
     {
+      "code": "dk-fyn",
+      "name": "fyn",
+      "regions": [
+        {
+          "code": "dk-fyn-svendborg",
+          "name": "svendborg",
+          "regions": []
+        }
+      ]
+    },
+    {
       "code": "dk-sdk",
       "name": "sdk",
       "regions": []

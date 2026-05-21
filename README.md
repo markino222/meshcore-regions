@@ -56,14 +56,22 @@ The catalog refreshes every night from the public MeshCore map at http://map.kie
 
 <!-- regions:auto-status:begin -->
 
-- Last sync: `2026-05-20T16:46:20Z`
-- Roots: 251
-- Total nodes: 565
+- Last sync: `2026-05-21T04:30:14Z`
+- Roots: 252
+- Total nodes: 573
 - Unsorted entries: 195
 
 | when (UTC) | kind | path | note |
 |---|---|---|---|
-| 2026-05-20T18:21:52Z | sync | f2f6de3 | sync: switch to PR-mode with auto-merge |
+| 2026-05-20T23:51:50Z | manual | 5540ef7 | schema: cap code segments at 29 chars, drop arbitrary 64 total |
+| 2026-05-20T23:17:31Z | manual | 51071d3 | regions: preserve hansemesh code under de; drop parent-prefix rule |
+| 2026-05-20T20:08:37Z | manual | fc2d3bd | regions: add nl-li, eu root, de-hansemesh; humanize labels |
+| 2026-05-20T18:53:49Z | manual | f2ce031 | ci: opt into Node 24 for JS actions |
+| 2026-05-20T18:52:41Z | manual | 0cb9e4c | readme: reflect full-path code shape; sync: kind by author |
+| 2026-05-20T18:50:55Z | manual | a1552b4 | fix: store full hyphenated code on every node |
+| 2026-05-20T16:46:28Z | sync | d17c6a2 | Merge pull request #1 from marcelverdult/sync/auto |
+| 2026-05-20T16:46:21Z | sync | 9f4512d | sync: 0 added, 0 resolved, 195 unsorted |
+| 2026-05-20T18:21:52Z | manual | f2f6de3 | sync: switch to PR-mode with auto-merge |
 | 2026-05-20T18:14:21Z | manual | e9133ec | initial: regions catalog, sync, validation |
 
 <!-- regions:auto-status:end -->

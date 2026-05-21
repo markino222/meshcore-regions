@@ -22,6 +22,11 @@
       "name": "wa",
       "regions": [
         {
+          "code": "au-wa-alh",
+          "name": "alh",
+          "regions": []
+        },
+        {
           "code": "au-wa-buy",
           "name": "buy",
           "regions": []

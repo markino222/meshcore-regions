@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T10:48:55Z",
+  "generated_at": "2026-05-22T14:17:41Z",
   "tree": [
     {
       "code": "ad",
@@ -984,7 +984,7 @@
         },
         {
           "code": "de-harz",
-          "name": "harz",
+          "name": "Harzregion",
           "regions": []
         },
         {
@@ -1111,7 +1111,7 @@
             },
             {
               "code": "de-ni-gs",
-              "name": "gs",
+              "name": "Kreis Goslar",
               "regions": []
             },
             {
@@ -1386,12 +1386,12 @@
             },
             {
               "code": "de-sh-hl",
-              "name": "hl",
+              "name": "Lübeck",
               "regions": []
             },
             {
               "code": "de-sh-ki",
-              "name": "ki",
+              "name": "Kiel",
               "regions": []
             },
             {
@@ -1401,22 +1401,22 @@
             },
             {
               "code": "de-sh-pi",
-              "name": "pi",
+              "name": "Pinneberg",
               "regions": []
             },
             {
               "code": "de-sh-ploe",
-              "name": "ploe",
+              "name": "Plön",
               "regions": []
             },
             {
               "code": "de-sh-rd",
-              "name": "rd",
+              "name": "Rendsburg-Eckernförde",
               "regions": []
             },
             {
               "code": "de-sh-slfl",
-              "name": "slfl",
+              "name": "Schleswig-Flensburg",
               "regions": []
             }
           ]
@@ -3796,7 +3796,7 @@
     },
     {
       "path": "de-harz",
-      "name": "harz"
+      "name": "Harzregion"
     },
     {
       "path": "de-hb",
@@ -3896,7 +3896,7 @@
     },
     {
       "path": "de-ni-gs",
-      "name": "gs"
+      "name": "Kreis Goslar"
     },
     {
       "path": "de-ni-h",
@@ -4112,11 +4112,11 @@
     },
     {
       "path": "de-sh-hl",
-      "name": "hl"
+      "name": "Lübeck"
     },
     {
       "path": "de-sh-ki",
-      "name": "ki"
+      "name": "Kiel"
     },
     {
       "path": "de-sh-oh",
@@ -4124,19 +4124,19 @@
     },
     {
       "path": "de-sh-pi",
-      "name": "pi"
+      "name": "Pinneberg"
     },
     {
       "path": "de-sh-ploe",
-      "name": "ploe"
+      "name": "Plön"
     },
     {
       "path": "de-sh-rd",
-      "name": "rd"
+      "name": "Rendsburg-Eckernförde"
     },
     {
       "path": "de-sh-slfl",
-      "name": "slfl"
+      "name": "Schleswig-Flensburg"
     },
     {
       "path": "de-sl",

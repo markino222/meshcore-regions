@@ -8,9 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  actions: write
 
 concurrency:
   group: sync
@@ -21,14 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: lts/*
 
@@ -77,3 +75,17 @@ jobs:
             pr_number="$(gh pr create --base main --head "$branch" --title "$msg" --body "Automated sync from upstream." | sed -n 's#.*/pull/\([0-9]*\).*#\1#p')"
           fi
           gh pr merge "$pr_number" --merge --delete-branch --auto
+
+      - name: Prune old workflow runs
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --paginate \
+            "repos/${{ github.repository }}/actions/workflows/sync.yml/runs" \
+            --jq '.workflow_runs[].id' \
+          | while read -r id; do
+              if [ "$id" != "${{ github.run_id }}" ]; then
+                gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" || true
+              fi
+            done

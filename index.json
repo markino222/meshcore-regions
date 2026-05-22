@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T14:17:41Z",
+  "generated_at": "2026-05-22T15:07:41Z",
   "tree": [
     {
       "code": "ad",
@@ -1211,6 +1211,11 @@
           "name": "Nordrhein-Westfalen",
           "regions": [
             {
+              "code": "bonn",
+              "name": "Bonn",
+              "regions": []
+            },
+            {
               "code": "de-nw-bi",
               "name": "bi",
               "regions": []
@@ -1304,6 +1309,26 @@
             {
               "code": "de-nw-te",
               "name": "te",
+              "regions": []
+            },
+            {
+              "code": "koeln",
+              "name": "Köln",
+              "regions": []
+            },
+            {
+              "code": "leverkusen",
+              "name": "Leverkusen",
+              "regions": []
+            },
+            {
+              "code": "niederrhein",
+              "name": "Niederrhein",
+              "regions": []
+            },
+            {
+              "code": "ruhrgebiet",
+              "name": "Ruhrgebiet",
               "regions": []
             }
           ]
@@ -1600,8 +1625,23 @@
           "regions": []
         },
         {
+          "code": "drielande",
+          "name": "Dreiländereck NL/BE/DE",
+          "regions": []
+        },
+        {
+          "code": "eifel",
+          "name": "Eifel",
+          "regions": []
+        },
+        {
           "code": "hansemesh",
           "name": "Hansemesh",
+          "regions": []
+        },
+        {
+          "code": "rheinland",
+          "name": "Rheinland",
           "regions": []
         }
       ]
@@ -3271,6 +3311,10 @@
       "name": "Bolivia"
     },
     {
+      "path": "bonn",
+      "name": "Bonn"
+    },
+    {
       "path": "bq",
       "name": "Caribbean Netherlands"
     },
@@ -4307,6 +4351,10 @@
       "name": "Dominican Republic"
     },
     {
+      "path": "drielande",
+      "name": "Dreiländereck NL/BE/DE"
+    },
+    {
       "path": "dz",
       "name": "Algeria"
     },
@@ -4325,6 +4373,10 @@
     {
       "path": "eh",
       "name": "Western Sahara"
+    },
+    {
+      "path": "eifel",
+      "name": "Eifel"
     },
     {
       "path": "er",
@@ -4659,6 +4711,10 @@
       "name": "St. Kitts & Nevis"
     },
     {
+      "path": "koeln",
+      "name": "Köln"
+    },
+    {
       "path": "kp",
       "name": "North Korea"
     },
@@ -4689,6 +4745,10 @@
     {
       "path": "lc",
       "name": "St. Lucia"
+    },
+    {
+      "path": "leverkusen",
+      "name": "Leverkusen"
     },
     {
       "path": "li",
@@ -4841,6 +4901,10 @@
     {
       "path": "ni",
       "name": "Nicaragua"
+    },
+    {
+      "path": "niederrhein",
+      "name": "Niederrhein"
     },
     {
       "path": "nl",
@@ -5123,6 +5187,10 @@
       "name": "Réunion"
     },
     {
+      "path": "rheinland",
+      "name": "Rheinland"
+    },
+    {
       "path": "ro",
       "name": "Romania"
     },
@@ -5133,6 +5201,10 @@
     {
       "path": "ru",
       "name": "Russia"
+    },
+    {
+      "path": "ruhrgebiet",
+      "name": "Ruhrgebiet"
     },
     {
       "path": "rw",

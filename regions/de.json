@@ -650,6 +650,11 @@
       "name": "Nordrhein-Westfalen",
       "regions": [
         {
+          "code": "bonn",
+          "name": "Bonn",
+          "regions": []
+        },
+        {
           "code": "de-nw-bi",
           "name": "bi",
           "regions": []
@@ -743,6 +748,26 @@
         {
           "code": "de-nw-te",
           "name": "te",
+          "regions": []
+        },
+        {
+          "code": "koeln",
+          "name": "Köln",
+          "regions": []
+        },
+        {
+          "code": "leverkusen",
+          "name": "Leverkusen",
+          "regions": []
+        },
+        {
+          "code": "niederrhein",
+          "name": "Niederrhein",
+          "regions": []
+        },
+        {
+          "code": "ruhrgebiet",
+          "name": "Ruhrgebiet",
           "regions": []
         }
       ]
@@ -1039,8 +1064,23 @@
       "regions": []
     },
     {
+      "code": "drielande",
+      "name": "Dreiländereck NL/BE/DE",
+      "regions": []
+    },
+    {
+      "code": "eifel",
+      "name": "Eifel",
+      "regions": []
+    },
+    {
       "code": "hansemesh",
       "name": "Hansemesh",
+      "regions": []
+    },
+    {
+      "code": "rheinland",
+      "name": "Rheinland",
       "regions": []
     }
   ]

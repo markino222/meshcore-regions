@@ -56,13 +56,20 @@ The catalog refreshes every night from the public MeshCore map at http://map.kie
 
 <!-- regions:auto-status:begin -->
 
-- Last sync: `2026-05-22T04:30:37Z`
+- Last sync: `2026-05-23T04:17:08Z`
 - Roots: 252
-- Total nodes: 593
-- Unsorted entries: 202
+- Total nodes: 616
+- Unsorted entries: 219
 
 | when (UTC) | kind | path | note |
 |---|---|---|---|
+| 2026-05-22T17:16:44Z | manual | 85434ed | ci: bump actions to Node 24 runtime, prune old sync runs |
+| 2026-05-22T17:07:51Z | manual | 9a6862e | regions: add Rhineland community regions from meshrheinland.de |
+| 2026-05-22T16:18:16Z | manual | 1489b54 | regions: humanize de-sh, de-ni-gs, de-harz labels from meshcorenetz.de |
+| 2026-05-22T13:01:40Z | manual | 606ce7f | regions: name de-nw-owl as Ostwestfalen-Lippe |
+| 2026-05-22T09:57:30Z | manual | c58038c | docs: release catalog under CC0 1.0 |
+| 2026-05-22T04:30:43Z | sync | 6bb90c0 | Merge pull request #3 from marcelverdult/sync/auto |
+| 2026-05-22T04:30:38Z | sync | 57f6ab6 | sync: 20 added, 1 resolved, 202 unsorted |
 | 2026-05-21T04:30:20Z | sync | e9d5d2c | Merge pull request #2 from marcelverdult/sync/auto |
 | 2026-05-21T04:30:15Z | sync | b670f71 | sync: 3 added, 2 resolved, 195 unsorted |
 | 2026-05-20T23:51:50Z | manual | 5540ef7 | schema: cap code segments at 29 chars, drop arbitrary 64 total |

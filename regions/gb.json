@@ -3,8 +3,28 @@
   "name": "United Kingdom",
   "regions": [
     {
+      "code": "gb-eng",
+      "name": "eng",
+      "regions": []
+    },
+    {
       "code": "gb-est",
       "name": "est",
+      "regions": []
+    },
+    {
+      "code": "gb-nir",
+      "name": "nir",
+      "regions": []
+    },
+    {
+      "code": "gb-sct",
+      "name": "sct",
+      "regions": []
+    },
+    {
+      "code": "gb-wls",
+      "name": "wls",
       "regions": []
     }
   ]

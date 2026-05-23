@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T15:07:41Z",
+  "generated_at": "2026-05-23T04:17:08Z",
   "tree": [
     {
       "code": "ad",
@@ -608,6 +608,11 @@
               "regions": []
             },
             {
+              "code": "de-bb-p",
+              "name": "p",
+              "regions": []
+            },
+            {
               "code": "de-bb-um",
               "name": "um",
               "regions": []
@@ -617,7 +622,13 @@
         {
           "code": "de-be",
           "name": "Berlin",
-          "regions": []
+          "regions": [
+            {
+              "code": "de-be-sw",
+              "name": "sw",
+              "regions": []
+            }
+          ]
         },
         {
           "code": "de-bebb",
@@ -926,6 +937,16 @@
               "regions": []
             },
             {
+              "code": "de-by-obb",
+              "name": "obb",
+              "regions": []
+            },
+            {
+              "code": "de-by-ro",
+              "name": "ro",
+              "regions": []
+            },
+            {
               "code": "de-by-schw",
               "name": "schw",
               "regions": []
@@ -1105,6 +1126,11 @@
               "regions": []
             },
             {
+              "code": "de-ni-frie",
+              "name": "frie",
+              "regions": []
+            },
+            {
               "code": "de-ni-goe",
               "name": "goe",
               "regions": []
@@ -1172,6 +1198,11 @@
             {
               "code": "de-ni-wf",
               "name": "wf",
+              "regions": []
+            },
+            {
+              "code": "de-ni-whv",
+              "name": "whv",
               "regions": []
             },
             {
@@ -1386,6 +1417,11 @@
             {
               "code": "de-rp-koblenz",
               "name": "koblenz",
+              "regions": []
+            },
+            {
+              "code": "de-rp-westerwal",
+              "name": "westerwal",
               "regions": []
             },
             {
@@ -1810,8 +1846,28 @@
       "name": "United Kingdom",
       "regions": [
         {
+          "code": "gb-eng",
+          "name": "eng",
+          "regions": []
+        },
+        {
           "code": "gb-est",
           "name": "est",
+          "regions": []
+        },
+        {
+          "code": "gb-nir",
+          "name": "nir",
+          "regions": []
+        },
+        {
+          "code": "gb-sct",
+          "name": "sct",
+          "regions": []
+        },
+        {
+          "code": "gb-wls",
+          "name": "wls",
           "regions": []
         }
       ]
@@ -2375,6 +2431,11 @@
           "regions": []
         },
         {
+          "code": "nl-brd",
+          "name": "brd",
+          "regions": []
+        },
+        {
           "code": "nl-cpi",
           "name": "cpi",
           "regions": []
@@ -2479,7 +2540,18 @@
         {
           "code": "nl-nb",
           "name": "Noord-Brabant",
-          "regions": []
+          "regions": [
+            {
+              "code": "nl-nb-brd",
+              "name": "brd",
+              "regions": []
+            },
+            {
+              "code": "nl-nb-goi",
+              "name": "goi",
+              "regions": []
+            }
+          ]
         },
         {
           "code": "nl-nh",
@@ -2516,6 +2588,11 @@
         {
           "code": "nl-rhe",
           "name": "rhe",
+          "regions": []
+        },
+        {
+          "code": "nl-tlb",
+          "name": "tlb",
           "regions": []
         },
         {
@@ -3543,12 +3620,20 @@
       "name": "osl"
     },
     {
+      "path": "de-bb-p",
+      "name": "p"
+    },
+    {
       "path": "de-bb-um",
       "name": "um"
     },
     {
       "path": "de-be",
       "name": "Berlin"
+    },
+    {
+      "path": "de-be-sw",
+      "name": "sw"
     },
     {
       "path": "de-bebb",
@@ -3795,6 +3880,14 @@
       "name": "oal"
     },
     {
+      "path": "de-by-obb",
+      "name": "obb"
+    },
+    {
+      "path": "de-by-ro",
+      "name": "ro"
+    },
+    {
       "path": "de-by-schw",
       "name": "schw"
     },
@@ -3935,6 +4028,10 @@
       "name": "fri"
     },
     {
+      "path": "de-ni-frie",
+      "name": "frie"
+    },
+    {
       "path": "de-ni-goe",
       "name": "goe"
     },
@@ -3989,6 +4086,10 @@
     {
       "path": "de-ni-wf",
       "name": "wf"
+    },
+    {
+      "path": "de-ni-whv",
+      "name": "whv"
     },
     {
       "path": "de-ni-wob",
@@ -4137,6 +4238,10 @@
     {
       "path": "de-rp-koblenz",
       "name": "koblenz"
+    },
+    {
+      "path": "de-rp-westerwal",
+      "name": "westerwal"
     },
     {
       "path": "de-rp-ww",
@@ -4459,8 +4564,24 @@
       "name": "United Kingdom"
     },
     {
+      "path": "gb-eng",
+      "name": "eng"
+    },
+    {
       "path": "gb-est",
       "name": "est"
+    },
+    {
+      "path": "gb-nir",
+      "name": "nir"
+    },
+    {
+      "path": "gb-sct",
+      "name": "sct"
+    },
+    {
+      "path": "gb-wls",
+      "name": "wls"
     },
     {
       "path": "gd",
@@ -4919,6 +5040,10 @@
       "name": "ams"
     },
     {
+      "path": "nl-brd",
+      "name": "brd"
+    },
+    {
       "path": "nl-cpi",
       "name": "cpi"
     },
@@ -5003,6 +5128,14 @@
       "name": "Noord-Brabant"
     },
     {
+      "path": "nl-nb-brd",
+      "name": "brd"
+    },
+    {
+      "path": "nl-nb-goi",
+      "name": "goi"
+    },
+    {
       "path": "nl-nh",
       "name": "Noord-Holland"
     },
@@ -5029,6 +5162,10 @@
     {
       "path": "nl-rhe",
       "name": "rhe"
+    },
+    {
+      "path": "nl-tlb",
+      "name": "tlb"
     },
     {
       "path": "nl-ut",

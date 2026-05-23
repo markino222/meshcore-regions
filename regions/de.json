@@ -47,6 +47,11 @@
           "regions": []
         },
         {
+          "code": "de-bb-p",
+          "name": "p",
+          "regions": []
+        },
+        {
           "code": "de-bb-um",
           "name": "um",
           "regions": []
@@ -56,7 +61,13 @@
     {
       "code": "de-be",
       "name": "Berlin",
-      "regions": []
+      "regions": [
+        {
+          "code": "de-be-sw",
+          "name": "sw",
+          "regions": []
+        }
+      ]
     },
     {
       "code": "de-bebb",
@@ -365,6 +376,16 @@
           "regions": []
         },
         {
+          "code": "de-by-obb",
+          "name": "obb",
+          "regions": []
+        },
+        {
+          "code": "de-by-ro",
+          "name": "ro",
+          "regions": []
+        },
+        {
           "code": "de-by-schw",
           "name": "schw",
           "regions": []
@@ -544,6 +565,11 @@
           "regions": []
         },
         {
+          "code": "de-ni-frie",
+          "name": "frie",
+          "regions": []
+        },
+        {
           "code": "de-ni-goe",
           "name": "goe",
           "regions": []
@@ -611,6 +637,11 @@
         {
           "code": "de-ni-wf",
           "name": "wf",
+          "regions": []
+        },
+        {
+          "code": "de-ni-whv",
+          "name": "whv",
           "regions": []
         },
         {
@@ -825,6 +856,11 @@
         {
           "code": "de-rp-koblenz",
           "name": "koblenz",
+          "regions": []
+        },
+        {
+          "code": "de-rp-westerwal",
+          "name": "westerwal",
           "regions": []
         },
         {

@@ -13,6 +13,11 @@
       "regions": []
     },
     {
+      "code": "nl-brd",
+      "name": "brd",
+      "regions": []
+    },
+    {
       "code": "nl-cpi",
       "name": "cpi",
       "regions": []
@@ -117,7 +122,18 @@
     {
       "code": "nl-nb",
       "name": "Noord-Brabant",
-      "regions": []
+      "regions": [
+        {
+          "code": "nl-nb-brd",
+          "name": "brd",
+          "regions": []
+        },
+        {
+          "code": "nl-nb-goi",
+          "name": "goi",
+          "regions": []
+        }
+      ]
     },
     {
       "code": "nl-nh",
@@ -154,6 +170,11 @@
     {
       "code": "nl-rhe",
       "name": "rhe",
+      "regions": []
+    },
+    {
+      "code": "nl-tlb",
+      "name": "tlb",
       "regions": []
     },
     {
